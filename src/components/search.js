@@ -32,21 +32,25 @@ const Search = ({
     <div>
       <h3 style={{ textAlign: "center", color: "blue" }}>Search</h3>
       <div className="container">
-        <div className="input-group mb-3">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Hacker News Search"
-            value={inputField}
-            onChange={(e) => updateInput(e.target.value)}
-          />
-          <button
-            className="btn btn-outline-primary"
-            type="button"
-            onClick={searchHandler}
-          >
-            Search
-          </button>
+        <div className="row justify-content-center">
+          <div className="col-sm-6">
+            <div className="input-group mb-3">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Hacker News Search"
+                value={inputField}
+                onChange={(e) => updateInput(e.target.value)}
+              />
+              <button
+                className="btn btn-outline-primary"
+                type="button"
+                onClick={searchHandler}
+              >
+                Search
+              </button>
+            </div>
+          </div>
         </div>
       </div>
       <div className="container-fluid">
