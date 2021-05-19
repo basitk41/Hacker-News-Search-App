@@ -22,7 +22,7 @@ const History = ({ history, deleteHistory, clearHistory }) => {
             <p style={{ textAlign: "center" }}>No history yet.</p>
           )}
           {history.map((item, i) => {
-            return <List item={item} deleteHistory={(i) => deleteHistory(i)} />;
+            return <List item={item} deleteHistory={() => deleteHistory(i)} />;
           })}
         </ul>
       </div>
