@@ -30,7 +30,7 @@ const Search = ({
   };
   return (
     <div>
-      <h1 style={{ textAlign: "center", color: "blue" }}>Search</h1>
+      <h3 style={{ textAlign: "center", color: "blue" }}>Search</h3>
       <div className="container">
         <div className="input-group mb-3">
           <input
