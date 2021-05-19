@@ -6,8 +6,7 @@ import History from "./components/history";
 const App = () => {
   return (
     <div className="container-fluid">
-      <br />
-      <nav>
+      <nav className="bg-light sticky-top">
         <div className="nav nav-tabs">
           <NavLink to="/home" className="nav-link">
             Home
