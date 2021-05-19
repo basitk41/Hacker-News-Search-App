@@ -5,9 +5,7 @@ import List from "./UI/list";
 const History = ({ history, deleteHistory, clearHistory }) => {
   return (
     <div>
-      <h1 style={{ textAlign: "center", color: "blueviolet" }}>
-        Search history
-      </h1>
+      <h1 style={{ textAlign: "center", color: "blue" }}>Search history</h1>
       <div className="container">
         <ul className="list-group">
           {history.length > 0 ? (
