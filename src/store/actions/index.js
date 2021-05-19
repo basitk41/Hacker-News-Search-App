@@ -1,2 +1,2 @@
 export { updatedHistory, deleteHistory, clearHistory } from "./history";
-export { updatedSearch, updateInput } from "./search";
+export { initSearch, updateInput } from "./search";

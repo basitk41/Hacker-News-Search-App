@@ -1,4 +1,5 @@
-import { createStore, combineReducers, compose } from "redux";
+import { createStore, combineReducers, compose, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 import History from "./reducer/history";
 import Search from "./reducer/search";
 const rootReducer = combineReducers({
@@ -6,5 +7,8 @@ const rootReducer = combineReducers({
   search: Search,
 });
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(rootReducer, composeEnhancers());
+const store = createStore(
+  rootReducer,
+  composeEnhancers(applyMiddleware(thunk))
+);
 export default store;

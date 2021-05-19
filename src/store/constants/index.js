@@ -1,2 +1,2 @@
 export { UPDATE, DELETE, CLEAR } from "./history";
-export { SETSEARCH, SETINPUT } from "./search";
+export { SETSEARCH, SETINPUT, LOADING } from "./search";

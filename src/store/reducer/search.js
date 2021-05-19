@@ -2,6 +2,7 @@ import * as Actions from "../constants/index";
 const initialState = {
   search: [],
   input: "",
+  loading: false,
 };
 
 const Reducer = (state = initialState, action) => {
@@ -15,6 +16,11 @@ const Reducer = (state = initialState, action) => {
       return {
         ...state,
         input: action.input,
+      };
+    case Actions.LOADING:
+      return {
+        ...state,
+        loading: action.value,
       };
     default:
       return state;

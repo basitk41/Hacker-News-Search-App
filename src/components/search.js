@@ -1,31 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import * as ActionsCreator from "../store/actions/index";
-import axios from "axios";
 import Spinner from "./UI/spinner";
 import Card from "./UI/card";
 const Search = ({
   updateHistory,
-  updateSearch,
+  initSearch,
   searchResult,
   inputField,
   updateInput,
+  loading,
 }) => {
-  const [loading, setLoading] = useState(false);
   const searchHandler = () => {
-    setLoading(true);
-    axios
-      .get(
-        `https://hn.algolia.com/api/v1/search?query=${inputField}&tags=story`
-      )
-      .then((response) => {
-        updateSearch(response.data.hits);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.log("Something went wrong!");
-        console.log(error);
-      });
+    initSearch(inputField);
     updateHistory(inputField);
   };
   return (
@@ -69,12 +56,13 @@ const mapStateToProps = (state) => {
   return {
     searchResult: state.search.search,
     inputField: state.search.input,
+    loading: state.search.loading,
   };
 };
 const mapDispatchToProps = (dispatch) => {
   return {
     updateHistory: (item) => dispatch(ActionsCreator.updatedHistory(item)),
-    updateSearch: (search) => dispatch(ActionsCreator.updatedSearch(search)),
+    initSearch: (search) => dispatch(ActionsCreator.initSearch(search)),
     updateInput: (input) => dispatch(ActionsCreator.updateInput(input)),
   };
 };
